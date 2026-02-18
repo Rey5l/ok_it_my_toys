@@ -1,0 +1,599 @@
+#modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(77, 54, 33, 0.65);
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 280ms ease;
+  z-index: 10;
+}
+
+#modalOverlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  z-index: 20;
+  opacity: 0;
+  transform: scale(0.98);
+  transition: opacity 260ms ease, transform 260ms ease;
+  pointer-events: none;
+}
+
+.modal[aria-hidden="false"] {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 40px;
+  padding: 32px;
+  max-width: 960px;
+  width: min(960px, 100%);
+  box-shadow: 0 40px 80px rgba(62, 39, 23, 0.3);
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #f8e8d2;
+  color: #9b602d;
+  font-weight: 700;
+}
+
+.modal-close:hover {
+  background: #f2d8b5;
+}
+
+.product-modal .modal-content {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 32px;
+}
+
+.modal-media {
+  background: #fdf4e3;
+  border-radius: 32px;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 48px 1fr 48px;
+  align-items: center;
+  gap: 12px;
+}
+
+.carousel-frame {
+  border-radius: 28px;
+  overflow: hidden;
+  height: 420px;
+}
+
+.carousel-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 28px;
+}
+
+.carousel-control {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #fff8f0;
+  box-shadow: none;
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  border: none;
+}
+
+.modal-info h2 {
+  margin: 0 0 20px;
+  color: var(--text-dark);
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.size-switcher {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.pill-btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  background: #f1cda4;
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: background var(--transition-base), color var(--transition-base);
+}
+
+.pill-btn.active {
+  background: #fff8f0;
+  color: var(--text-dark);
+}
+
+.product-text {
+  color: var(--text-dark);
+  line-height: 1.7;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+  font-weight: 300;
+}
+
+.product-text p {
+  margin: 0 0 16px;
+}
+
+.product-details {
+  margin: 20px 0;
+  padding: 0;
+}
+
+.detail-item {
+  margin-bottom: 16px;
+  color: var(--text-dark);
+  line-height: 1.7;
+  font-size: 0.95rem;
+  font-weight: 300;
+}
+
+.detail-item:last-child {
+  margin-bottom: 0;
+}
+
+.detail-item strong {
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+.detail-item em {
+  font-style: italic;
+  color: var(--text-dark);
+  font-weight: 300;
+}
+
+.product-note {
+  margin-top: 16px;
+  padding: 12px 16px;
+  background: #fffaf1;
+  border-radius: 12px;
+  border-left: 3px solid var(--accent);
+}
+
+.product-note p {
+  margin: 0;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.product-options {
+  margin: 20px 0;
+}
+
+.option-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  background: #fff8f0;
+  border: none;
+  border-radius: 8px;
+  color: var(--text-dark);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background var(--transition-base);
+  width: 100%;
+  text-align: left;
+  margin-bottom: 12px;
+}
+
+.option-btn:hover {
+  background: #fffaf1;
+}
+
+.option-icon {
+  font-size: 1.2rem;
+  color: var(--text-dark);
+  font-weight: 700;
+}
+
+.option-price {
+  margin-left: auto;
+  color: var(--accent-dark);
+  font-weight: 700;
+}
+
+.delivery-note {
+  margin: 20px 0;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+.delivery-note p {
+  margin: 0;
+}
+
+.link-btn {
+  color: var(--text-dark);
+  text-decoration: underline;
+  font-weight: 300;
+  display: inline;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: inherit;
+}
+
+.modal-actions {
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.primary-btn {
+  background: #fff8f0;
+  color: var(--text-dark);
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.95rem;
+  box-shadow: none;
+  transition: background var(--transition-base);
+  border: none;
+}
+
+.primary-btn:hover {
+  background: #fffaf1;
+}
+
+.price-tag {
+  background: #f1cda4;
+  padding: 14px 24px;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  display: inline-block;
+}
+
+.delivery-modal .modal-content {
+  text-align: center;
+  max-width: 860px;
+}
+
+.delivery-header .eyebrow {
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  color: var(--text-dark);
+  letter-spacing: 0.4px;
+}
+
+.delivery-header h3 {
+  color: var(--text-dark);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.delivery-header #deliveryModalDescription {
+  color: var(--text-dark);
+  font-weight: 300;
+  line-height: 1.6;
+  text-align: left;
+  padding-bottom: 8px;
+}
+
+.delivery-header #deliveryModalSecondaryText {
+  color: var(--text-dark);
+  font-weight: 300;
+  text-align: left;
+}
+
+.delivery-grid {
+  margin: 32px 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.delivery-card {
+  border: 2px dashed rgba(209, 138, 70, 0.4);
+  border-radius: 28px;
+  padding: 24px;
+  background: #fffaf1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  min-height: 180px;
+}
+
+.delivery-card img {
+  width: 90px;
+  height: auto;
+}
+
+.delivery-card h3 {
+  margin: 0;
+  color: var(--text-dark);
+}
+
+.delivery-card p {
+  margin: auto 0 0 0;
+  color: var(--text-dark);
+  font-weight: 300;
+}
+
+.delivery-footer {
+  color: var(--text-dark);
+}
+
+.delivery-footer p {
+  text-align: left;
+  font-weight: 300;
+}
+
+.delivery-footer blockquote {
+  margin: 16px 0 0;
+  font-weight: 600;
+  color: var(--accent-dark);
+}
+
+.text-modal .modal-content {
+  max-width: 700px;
+}
+
+#aboutModal .modal-content {
+  text-align: center;
+  max-width: 860px;
+}
+
+.about-header {
+  position: relative;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+#aboutModal #aboutModalTitle {
+  color: var(--text-dark);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-style: normal;
+  margin: 0;
+  text-align: center;
+}
+
+.about-eyebrow {
+  color: var(--text-dark);
+  font-weight: 300;
+  font-size: 0.9rem;
+  margin: 0;
+  font-style: normal;
+  text-align: right;
+  margin-top: 4px;
+}
+
+.about-content {
+  text-align: left;
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+.about-content p {
+  margin: 0 0 16px 0;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.about-content p:last-child {
+  margin-bottom: 0;
+}
+
+.about-illustration {
+  width: 100%;
+  max-width: 500px;
+  margin: 24px auto;
+  display: block;
+}
+
+.text-modal__body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+#howtoModal .modal-content {
+  text-align: center;
+  max-width: 860px;
+}
+
+#howtoModal #howtoModalTitle {
+  color: var(--text-dark);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-style: normal;
+}
+
+#howtoModal #howtoModalDescription {
+  color: var(--text-dark);
+  font-weight: 300;
+  line-height: 1.6;
+  text-align: left;
+  padding-bottom: 8px;
+  font-style: normal;
+}
+
+.howto-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.howto-step {
+  border: 2px dashed rgba(209, 138, 70, 0.4);
+  border-radius: 16px;
+  padding: 16px 20px;
+  background: #fffaf1;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+  text-align: left;
+}
+
+.step-circle {
+  width: 20px;
+  height: 20px;
+  border: 2px dashed rgba(209, 138, 70, 0.4);
+  border-radius: 50%;
+  background: transparent;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.howto-step p {
+  margin: 0;
+  color: var(--text-dark);
+  line-height: 1.6;
+  flex: 1;
+  font-weight: 300;
+  font-size: inherit;
+  font-style: normal;
+}
+
+.howto-step p strong {
+  font-weight: 600;
+  color: var(--text-dark);
+  font-style: normal;
+}
+
+.howto-footer {
+  color: var(--text-dark);
+  font-weight: 300;
+  text-align: left;
+  margin-top: 16px;
+  line-height: 1.6;
+}
+
+#contactsModal .text-muted {
+  color: var(--text-dark);
+  margin-top: 16px;
+  font-weight: 300;
+  text-align: left;
+  font-style: italic;
+}
+
+#contactsModal .modal-content {
+  text-align: center;
+  max-width: 860px;
+  font-style: normal;
+}
+
+#contactsModal #contactsModalTitle {
+  color: var(--text-dark);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-style: normal;
+}
+
+#contactsModal #contactsModalDescription {
+  color: var(--text-dark);
+  font-weight: 300;
+  line-height: 1.6;
+  text-align: left;
+  padding-bottom: 8px;
+  font-style: normal;
+}
+
+#contactsModal #contactsModalDescriptionSecondary {
+  color: var(--text-dark);
+  font-weight: 300;
+  line-height: 1.6;
+  text-align: left;
+  padding-bottom: 8px;
+  font-style: normal;
+}
+
+#contactsModal #contactsModalDescriptionTertiary {
+  color: var(--text-dark);
+  font-weight: 300;
+  line-height: 1.6;
+  text-align: left;
+  padding-bottom: 8px;
+  font-style: italic;
+}
+.contacts-grid {
+  margin: 24px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 18px;
+}
+
+.contacts-grid article {
+  border: 2px dashed rgba(209, 138, 70, 0.4);
+  border-radius: 24px;
+  padding: 18px;
+  background: #fffaf1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.messenger-logo {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.contacts-grid .messenger-name {
+  margin: 0 0 12px 0;
+  color: var(--text-dark);
+  font-style: normal;
+  font-size: 0.75rem;
+  font-weight: 300;
+}
+
+.contacts-grid .qr-code {
+  width: 100%;
+  max-width: 100px;
+  margin: 0 auto;
+  display: block;
+}
+
+.small-note {
+  font-size: 0.85rem;
+}
+
