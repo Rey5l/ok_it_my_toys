@@ -1,0 +1,15 @@
+# Исключить из загрузки assets (лимит Cloudflare Workers — 25 MiB на файл)
+.git
+.git/**
+
+# Служебные и лишние файлы
+.DS_Store
+node_modules/
+.wrangler/
+*.log
+.env
+.env.local
+.gitignore
+.assetsignore
+DEPLOY.md
+*.md
