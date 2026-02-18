@@ -54,6 +54,7 @@
   background: #f8e8d2;
   color: #9b602d;
   font-weight: 700;
+  z-index: 30;
 }
 
 .modal-close:hover {
